@@ -3,6 +3,8 @@ package com.devsuperior.atvcap1.dto;
 import java.io.Serializable;
 import java.time.Instant;
 
+import com.devsuperior.atvcap1.entities.Client;
+
 public class ClientDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -22,6 +24,15 @@ public class ClientDTO implements Serializable {
 		this.income = income;
 		this.birthDate = birthDate;
 		this.children = children;
+	}
+	
+	public ClientDTO(Client entity) {
+		this.id = entity.getId();
+		this.name = entity.getName();
+		this.cpf = entity.getCpf();
+		this.income = entity.getIncome();
+		this.birthDate = entity.getBirthDate();
+		this.children = entity.getChildren();
 	}
 
 	public Long getId() {
